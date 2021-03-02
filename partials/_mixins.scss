@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
+//COLORS
+$delGreen: #86bc25;
+$darkGreen: #62a381;
+$delBlue: #00a3e0;
+$darkGrey: #1c1c1c;
+
+// MEDIA QUERIES
+$phone: "<del-phone";
+$tablet: "<del-tablet";
+
+@mixin green-font {
+  color: $delGreen;
+  font-weight: bold;
+}
+@mixin dark-green-font {
+  color: $darkGreen;
+  font-weight: bold;
+}
+@mixin blue-font {
+  color: $delBlue;
+  font-weight: bold;
+}
+
+@mixin green-bg {
+  background-color: $delGreen;
+}

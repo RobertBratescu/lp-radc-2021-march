@@ -5,6 +5,38 @@ body {
 
 div.r-container {
   max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 2vw;
+  position: inherit;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.radc-wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.radc-wrapper * {
+  font-family: "Open Sans", sans;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.radc-wrapper > section {
+  position: relative;
+  width: 100%;
+}
+
+.radc-wrapper p {
+  font-size: min(max(16px, 1vw), 18px);
+  color: white;
+  line-height: 1.4;
 }
 
 h1.green,
@@ -76,5 +108,132 @@ div.green {
     -webkit-box-shadow: 0 0 0 0 rgba(134, 188, 37, 0);
             box-shadow: 0 0 0 0 rgba(134, 188, 37, 0);
   }
+}
+
+.r-header {
+  background-image: url(/img/hero-bg.png);
+  min-height: 70vh;
+  background-position-x: 12vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.r-header .r-container {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  min-height: 70vh;
+}
+
+.r-header .hero-text {
+  min-height: 70vh;
+  width: 30%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+  margin-left: 1vw;
+}
+
+.r-header .hero-text .hero-title {
+  font-size: min(max(30px, 7vw), 54px);
+  font-weight: 300;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  margin: 0;
+  margin-bottom: 3vw;
+}
+
+.r-header .hero-text .hero-cta {
+  cursor: pointer;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  padding: 10px 50px;
+  border: 3px solid #86bc25;
+  font-size: min(max(20px, 2vw), 30px);
+}
+
+.r-header .hero-text .hero-cta:hover {
+  background-color: #86bc25;
+}
+
+.r-first-half {
+  padding: 2vw 0;
+  position: relative;
+  background-color: #1c1c1c;
+}
+
+.r-first-half p {
+  text-align: center;
+}
+
+.r-first-half .blob {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.r-second-half {
+  padding: 2vw;
+  background-image: url(/img/intro-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: 8vw;
+  min-height: 30vh;
+}
+
+.r-second-half .blob-wrapper {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+}
+
+.r-second-half .blob-wrapper:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-bottom: 1px solid rgba(134, 188, 37, 0.4);
+  border-right: 1px solid rgba(134, 188, 37, 0.4);
+}
+
+.r-second-half .r-container {
+  min-height: 30vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.r-second-half .r-container p {
+  max-width: 65%;
+  margin-bottom: 1vw;
+}
+
+.r-second-half .r-container .wide {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  max-width: 100%;
+  text-align: center;
+  background-color: #1c1c1c;
+  padding: 1vw;
+  margin-top: 2vw;
 }
 /*# sourceMappingURL=style.css.map */

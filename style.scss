@@ -6,8 +6,31 @@ body {
 }
 div.r-container {
   max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 2vw;
+  position: inherit;
+  //   background-color: rgba(134, 188, 37, 0.2);
 }
-
+.flex {
+  display: flex;
+}
+.radc-wrapper {
+  box-sizing: border-box;
+  & * {
+    font-family: "Open Sans", sans;
+    box-sizing: border-box;
+  }
+  & > section {
+    position: relative;
+    width: 100%;
+  }
+  & p {
+    font-size: $pFont;
+    color: white;
+    line-height: 1.4;
+  }
+}
 h1,
 h2,
 h3,
@@ -24,7 +47,6 @@ div {
     @include green-bg;
   }
 }
-
 //BLOB
 .blob {
   border-radius: 50%;
@@ -51,5 +73,100 @@ div {
   100% {
     transform: scale(0.7);
     box-shadow: 0 0 0 0 rgba(134, 188, 37, 0);
+  }
+}
+
+//HEADER
+.r-header {
+  background-image: url(/img/hero-bg.png);
+  min-height: 70vh;
+  background-position-x: 12vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  & .r-container {
+    flex-basis: 100%;
+    min-height: 70vh;
+  }
+  & .hero-text {
+    min-height: 70vh;
+    width: 30%;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    margin-left: 1vw;
+    & .hero-title {
+      font-size: $h1Font;
+      font-weight: 300;
+      flex: 0;
+      margin: 0;
+      margin-bottom: 3vw;
+    }
+    & .hero-cta {
+      cursor: pointer;
+      flex: 0;
+      padding: 10px 50px;
+      border: 3px solid $delGreen;
+      font-size: #{"min(max(#{20px}, #{2vw}), #{30px})"};
+      &:hover {
+        background-color: $delGreen;
+      }
+    }
+  }
+}
+
+//INTRO FIRST HALF
+.r-first-half {
+  padding: 2vw 0;
+  position: relative;
+  background-color: $darkGrey;
+  & p {
+    text-align: center;
+  }
+  & .blob {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+//INTRO SECOND HALF
+.r-second-half {
+  padding: 2vw;
+  background-image: url(/img/intro-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: 8vw;
+  min-height: 30vh;
+  & .blob-wrapper {
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    &:before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      border-bottom: 1px solid rgba(134, 188, 37, 0.4);
+      border-right: 1px solid rgba(134, 188, 37, 0.4);
+    }
+  }
+  & .r-container {
+    min-height: 30vh;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    & p {
+      max-width: 65%;
+      margin-bottom: 1vw;
+    }
+    & .wide {
+      align-self: stretch;
+      max-width: 100%;
+      text-align: center;
+      background-color: $darkGrey;
+      padding: 1vw;
+      margin-top: 2vw;
+    }
   }
 }

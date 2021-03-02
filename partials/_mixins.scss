@@ -5,6 +5,10 @@ $darkGreen: #62a381;
 $delBlue: #00a3e0;
 $darkGrey: #1c1c1c;
 
+//FONTS
+$h1Font: #{"min(max(#{30px}, #{7vw}), #{54px})"};
+$pFont: #{"min(max(#{16px}, #{1vw}), #{18px})"};
+
 // MEDIA QUERIES
 $phone: "<del-phone";
 $tablet: "<del-tablet";

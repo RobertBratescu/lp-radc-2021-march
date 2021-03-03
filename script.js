@@ -7,4 +7,11 @@ $(document).ready(function () {
       900
     );
   });
+
+  $(".event-cta-button").mouseover(function () {
+    $(this).addClass("hovered");
+  });
+  $(".event-cta-button").mouseout(function () {
+    $(this).removeClass("hovered");
+  });
 });

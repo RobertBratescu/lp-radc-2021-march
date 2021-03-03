@@ -10,6 +10,7 @@ $h1Font: #{"min(max(#{30px}, #{7vw}), #{54px})"};
 $h2Font: #{"min(max(#{27px}, #{5vw}), #{48px})"};
 $h3Font: #{"min(max(#{20px}, #{4vw}), #{25px})"};
 $h3FontSpecial: #{"min(max(#{23px}, #{4vw}), #{32px})"};
+$eventTitle: #{"min(max(#{23px}, #{5vw}), #{29px})"};
 $pFont: #{"min(max(#{16px}, #{1vw}), #{18px})"};
 $pFontLarge: #{"min(max(#{18px}, #{2vw}), #{20px})"};
 
@@ -45,6 +46,17 @@ $tablet: "<del-tablet";
     }
     100% {
       transform: rotate(-45deg) scale(0.6) translateX(20px) translateY(25px);
+    }
+  }
+  @keyframes arrow-small-move-2 {
+    0% {
+      transform: rotate(-45deg) translateX(35px) translateY(20px);
+    }
+    50% {
+      transform: rotate(-45deg) translateX(40px) translateY(35px);
+    }
+    100% {
+      transform: rotate(-45deg) translateX(35px) translateY(20px);
     }
   }
   @keyframes arrow-big-move {

@@ -590,7 +590,6 @@ div.green {
 }
 
 .r-events .inner-events .event-card {
-  cursor: pointer;
   height: 450px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -681,6 +680,7 @@ div.green {
 }
 
 .r-events .inner-events .event-card .event-cta-wrapper .event-cta-button {
+  cursor: pointer;
   display: inline-block;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;

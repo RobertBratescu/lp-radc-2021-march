@@ -413,7 +413,6 @@ div {
     }
 
     & .event-card {
-      cursor: pointer;
       height: 450px;
       flex-flow: column nowrap;
       justify-content: flex-start;
@@ -475,6 +474,8 @@ div {
         justify-content: flex-start;
         align-items: center;
         & .event-cta-button {
+          cursor: pointer;
+
           display: inline-block;
           transition: all 0.3s ease;
           padding: 10px 20px;

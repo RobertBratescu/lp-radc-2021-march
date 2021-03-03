@@ -753,6 +753,11 @@ div.green {
       flex-basis: 3%;
 }
 
+.r-follow .r-container .r-social-icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .r-follow .r-container .r-social-icon img {
   width: 100%;
   margin: 0 auto;

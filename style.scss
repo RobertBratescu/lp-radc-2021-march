@@ -471,6 +471,9 @@ div {
     }
     & .r-social-icon {
       flex-basis: 3%;
+      &:hover {
+        transform: scale(1.1);
+      }
       & img {
         width: 100%;
         // max-width: 40px;

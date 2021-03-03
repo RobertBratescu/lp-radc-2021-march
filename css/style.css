@@ -145,7 +145,7 @@ div.green {
 }
 
 .r-header {
-  background-image: url(/img/hero-bg.png);
+  background-image: url(../img/hero-bg.png);
   min-height: 70vh;
   background-position-x: 12vw;
   background-repeat: no-repeat;
@@ -224,7 +224,7 @@ div.green {
 
 .r-second-half {
   padding: 2vw;
-  background-image: url(/img/intro-bg.png);
+  background-image: url(../img/intro-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

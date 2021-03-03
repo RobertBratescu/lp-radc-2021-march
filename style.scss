@@ -393,7 +393,7 @@ div {
       bottom: 0;
       left: 0;
       width: 3px;
-      height: 50%;
+      height: 55%;
       background-color: $delGreen;
     }
     & .events-text-wrapper {
@@ -450,6 +450,7 @@ div {
         color: white;
         font-weight: bold;
         padding: 2vw 0 0 0;
+        transform: translateX(-10px);
       }
 
       & .event-description {
@@ -527,7 +528,7 @@ div {
           opacity: 0;
         }
         & .event-title {
-          transform: translateY(-5vw);
+          transform: translateY(-5vw) translateX(-10px);
           opacity: 0;
         }
         & .event-description {

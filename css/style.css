@@ -565,7 +565,7 @@ div.green {
   bottom: 0;
   left: 0;
   width: 3px;
-  height: 50%;
+  height: 55%;
   background-color: #86bc25;
 }
 
@@ -643,6 +643,8 @@ div.green {
   color: white;
   font-weight: bold;
   padding: 2vw 0 0 0;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
 }
 
 .r-events .inner-events .event-card .event-description {
@@ -745,8 +747,8 @@ div.green {
 }
 
 .r-events .inner-events .event-card:hover .event-title {
-  -webkit-transform: translateY(-5vw);
-          transform: translateY(-5vw);
+  -webkit-transform: translateY(-5vw) translateX(-10px);
+          transform: translateY(-5vw) translateX(-10px);
   opacity: 0;
 }
 

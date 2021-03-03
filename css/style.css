@@ -1,4 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
+/* --- PAGE SCROLLBAR --- */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #515151;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(134, 188, 37, 0.7);
+  border-radius: 10vw;
+  border: 1px solid rgba(134, 188, 37, 0.3);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 188, 37, 0.5);
+}
+
 body {
   background-color: black;
 }

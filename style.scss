@@ -1,5 +1,29 @@
 @import "partials/mixins";
 @import "partials/include-media";
+
+/* --- PAGE SCROLLBAR --- */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #515151;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(134, 188, 37, 0.7);
+  border-radius: 10vw;
+  border: 1px solid rgba(134, 188, 37, 0.3);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 188, 37, 0.5);
+}
+
 //GENERAL
 body {
   background-color: black;

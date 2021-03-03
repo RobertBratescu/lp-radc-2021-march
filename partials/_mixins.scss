@@ -7,7 +7,11 @@ $darkGrey: #1c1c1c;
 
 //FONTS
 $h1Font: #{"min(max(#{30px}, #{7vw}), #{54px})"};
+$h2Font: #{"min(max(#{27px}, #{5vw}), #{48px})"};
+$h3Font: #{"min(max(#{20px}, #{4vw}), #{25px})"};
+$h3FontSpecial: #{"min(max(#{23px}, #{4vw}), #{32px})"};
 $pFont: #{"min(max(#{16px}, #{1vw}), #{18px})"};
+$pFontLarge: #{"min(max(#{18px}, #{2vw}), #{20px})"};
 
 // MEDIA QUERIES
 $phone: "<del-phone";
@@ -28,4 +32,30 @@ $tablet: "<del-tablet";
 
 @mixin green-bg {
   background-color: $delGreen;
+}
+
+//SOME KEYFRAMES FOR ARROWS
+@mixin arrow-keyframes {
+  @keyframes arrow-small-move {
+    0% {
+      transform: rotate(-45deg) scale(0.6) translateX(20px) translateY(25px);
+    }
+    50% {
+      transform: rotate(-45deg) scale(0.6) translateX(30px) translateY(35px);
+    }
+    100% {
+      transform: rotate(-45deg) scale(0.6) translateX(20px) translateY(25px);
+    }
+  }
+  @keyframes arrow-big-move {
+    0% {
+      transform: rotate(-45deg) scale(0.7) translateX(32px) translateY(-17px);
+    }
+    50% {
+      transform: rotate(-45deg) scale(0.7) translateX(51px) translateY(0px);
+    }
+    100% {
+      transform: rotate(-45deg) scale(0.7) translateX(32px) translateY(-17px);
+    }
+  }
 }

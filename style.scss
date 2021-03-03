@@ -16,6 +16,7 @@ div.r-container {
   display: flex;
 }
 .radc-wrapper {
+  overflow-x: hidden;
   box-sizing: border-box;
   & * {
     font-family: "Open Sans", sans;
@@ -28,7 +29,8 @@ div.r-container {
   & p {
     font-size: $pFont;
     color: white;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-weight: 300;
   }
 }
 h1,
@@ -40,6 +42,15 @@ p,
 span {
   &.green {
     @include green-font;
+  }
+  &.blue {
+    @include blue-font;
+  }
+  &.darkgreen {
+    @include dark-green-font;
+  }
+  &.nowrap {
+    white-space: nowrap;
   }
 }
 div {
@@ -107,9 +118,14 @@ div {
       flex: 0;
       padding: 10px 50px;
       border: 3px solid $delGreen;
-      font-size: #{"min(max(#{20px}, #{2vw}), #{30px})"};
+      font-size: #{"min(max(#{20px}, #{2vw}), #{28px})"};
+      transition: all 0.3s ease;
+      text-transform: none;
+      color: white;
+      text-decoration: none;
       &:hover {
         background-color: $delGreen;
+        // color: black;
       }
     }
   }
@@ -117,9 +133,9 @@ div {
 
 //INTRO FIRST HALF
 .r-first-half {
-  padding: 2vw 0;
+  padding: 3vw 0;
   position: relative;
-  background-color: $darkGrey;
+  background-color: #302f36;
   & p {
     text-align: center;
   }
@@ -141,14 +157,22 @@ div {
   min-height: 30vh;
   & .blob-wrapper {
     position: absolute;
-    left: 20%;
-    top: 40%;
-    &:before {
-      content: "";
-      width: 30px;
-      height: 30px;
-      border-bottom: 1px solid rgba(134, 188, 37, 0.4);
-      border-right: 1px solid rgba(134, 188, 37, 0.4);
+    left: 18%;
+    top: 30%;
+    & .blob-inner-wrapper {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90px;
+        height: 90px;
+        border-bottom: 70px solid rgba(134, 188, 37, 0.2);
+        border-right: 70px solid rgba(134, 188, 37, 0.2);
+        transform: rotate(-45deg) translate(0px, -228px);
+        transform-origin: bottom right;
+      }
     }
   }
   & .r-container {
@@ -165,8 +189,297 @@ div {
       max-width: 100%;
       text-align: center;
       background-color: $darkGrey;
-      padding: 1vw;
+      padding: 2vw;
       margin-top: 2vw;
+    }
+  }
+}
+
+//JOBS LINKS
+.r-jobs {
+  background-color: $darkGrey;
+  min-height: 60vh;
+  padding: 3vw 0;
+  & .jobs-section-title {
+    font-size: $h2Font;
+    color: white;
+  }
+  & .jobs-wrapper {
+    min-height: 60vh;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 3vw 0;
+    & .job-container {
+      flex-basis: 32%;
+      background-color: rgba(36, 36, 36, 1);
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px;
+      position: relative;
+      cursor: pointer;
+      border: 1px solid #242424;
+      transition: all 0.6s ease;
+
+      & .arrow {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-right: 5px solid white;
+        border-bottom: 5px solid white;
+        transform-origin: bottom right;
+        transform: rotate(-45deg) translateY(-10px);
+        transition: transform 0.4s ease;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 50px;
+          height: 5px;
+          background-color: white;
+          transform-origin: bottom right;
+          transform: rotate(45deg) translateY(3px);
+        }
+      }
+      &:not(.special) .paper-airplane {
+        width: 50px;
+      }
+      &:not(.special) .job-container-title {
+        font-size: $h3Font;
+        width: 30%;
+        margin: 2vw 0;
+        color: white;
+        text-transform: uppercase;
+      }
+      &:not(.special) .cta-wrapper {
+        width: 100%;
+        margin-top: 2vw;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        & .cta-button {
+          color: white;
+          padding: 10px 20px;
+          font-size: 20px;
+          font-weight: bold;
+          background: rgba(134, 188, 37, 1);
+          transition: all 0.3s ease;
+        }
+        & .arrow {
+          width: 25px;
+          height: 25px;
+          border-right: 4px solid white;
+          border-bottom: 4px solid white;
+          transform: scale(0.6) rotate(-45deg) translate(20px, 25px);
+          &:before {
+            width: 30px;
+            height: 4px;
+            transform: rotate(45deg) translateY(2px);
+          }
+        }
+      }
+      &.special {
+        background-color: #114129;
+        justify-content: center;
+        & .job-container-title {
+          font-size: $h3FontSpecial;
+          width: 50%;
+          margin: 2vw 0;
+          color: white;
+          text-transform: uppercase;
+        }
+        & .arrow {
+          transform: scale(0.7) rotate(-45deg) translate(32px, -17px);
+        }
+      }
+      &:not(.special):before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        top: 0;
+        left: 0;
+        background-color: #c4d600;
+      }
+      &:not(.special):hover {
+        border-color: $delGreen;
+        background-color: rgba(36, 36, 36, 0);
+
+        &:before {
+          display: none;
+        }
+        & .arrow {
+          // transform: scale(0.6) rotate(-45deg) translate(30px, 35px) !important;
+          animation: arrow-small-move 1.5s infinite 0s ease-in-out;
+        }
+        & .cta-button {
+          background: rgba(134, 188, 37, 0);
+          color: $delGreen;
+        }
+      }
+      &.special:hover {
+        background-color: #145032;
+        & .arrow {
+          animation: arrow-big-move 1.5s infinite 0s ease-in-out;
+        }
+      }
+
+      @include arrow-keyframes;
+    }
+  }
+}
+
+//WHY JOIN US
+.r-why {
+  margin-top: 50px;
+  background-color: $darkGrey;
+  min-height: 60vh;
+  padding: 3vw 0;
+  & .why-intro {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    & .why-title {
+      font-size: $h2Font;
+      color: white;
+    }
+    & .why-intro-image {
+      margin-left: 2vw;
+      transform: translateY(-7px);
+    }
+  }
+
+  & .benefits-wrapper {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & .oyster-benefits {
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: stretch;
+      // background-color: red;
+      margin-bottom: 1.8vw;
+      flex-basis: 48%;
+
+      & .benefits-title {
+        border-bottom: 1px solid $delGreen;
+      }
+    }
+    & .needs-benefits {
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: stretch;
+      flex-basis: 48%;
+      // background-color: yellow;
+      & .benefits-title {
+        border-bottom: 1px solid $delBlue;
+      }
+    }
+    & .flexibility-benefits {
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: stretch;
+      flex-basis: 100%;
+
+      // background-color: blue;
+      & .benefits-title {
+        border-bottom: 1px solid $darkGreen;
+      }
+    }
+    & .benefits-title {
+      font-size: $h3FontSpecial;
+      font-weight: bold;
+      padding: 20px 0;
+      border-bottom: 1px solid red;
+    }
+
+    & .benefit {
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 0;
+      margin-left: 3vw;
+      border-bottom: 1px solid #515151;
+
+      font-size: $pFontLarge;
+      color: white;
+      font-weight: 300;
+
+      & .benefit-img {
+        max-width: 50px;
+        margin-right: 1.5vw;
+        align-self: flex-start;
+      }
+    }
+  }
+}
+
+//CTA SECTION
+.r-cta {
+  background-color: $delGreen;
+  min-height: 30vh;
+  padding: 4vw 0;
+  & .r-container {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 3vw;
+    & .cta-title {
+      font-size: $h2Font;
+      color: white;
+      max-width: 30vw;
+      // line-height: 1;
+      margin-bottom: 2vw;
+    }
+    & .cta-link {
+      cursor: pointer;
+      flex: 0;
+      text-transform: uppercase;
+      padding: 15px 50px;
+      color: black;
+      font-weight: bold;
+      border: 3px solid white;
+      font-size: #{"min(max(#{20px}, #{2vw}), #{24px})"};
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: white;
+        color: $delGreen;
+      }
+    }
+  }
+}
+
+//FOLLOW US SECTION
+.r-follow {
+  background-color: black;
+  min-height: 30vh;
+  padding: 4vw 0 2vw 0;
+  & .r-container {
+    min-height: 30vh;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+    & .follow-us-title {
+      flex-basis: 100%;
+      font-size: $pFontLarge;
+      color: white;
+      text-align: center;
+    }
+    & .r-social-icon {
+      flex-basis: 3%;
+      & img {
+        width: 100%;
+        // max-width: 40px;
+        margin: 0 auto;
+        display: block;
+      }
+      & + .r-social-icon {
+        margin-left: 10px;
+      }
     }
   }
 }

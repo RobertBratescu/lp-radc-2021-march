@@ -328,7 +328,7 @@ div {
         background-color: #c4d600;
       }
       &:not(.special):hover {
-        border-color: $delGreen;
+        border-color: #c4d600;
         background-color: rgba(36, 36, 36, 0);
 
         &:before {
@@ -340,7 +340,7 @@ div {
         }
         & .cta-button {
           background: rgba(134, 188, 37, 0);
-          color: $delGreen;
+          color: rgba(134, 188, 37, 1);
         }
       }
       &.special:hover {

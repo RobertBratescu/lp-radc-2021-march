@@ -64,6 +64,10 @@ div.r-container {
   font-weight: 300;
 }
 
+.radc-wrapper a {
+  text-decoration: none;
+}
+
 h1.green,
 h2.green,
 h3.green,
@@ -275,17 +279,45 @@ div.green {
   min-height: 30vh;
 }
 
-.r-second-half .blob-wrapper {
-  position: absolute;
-  left: 18%;
-  top: 30%;
+.r-second-half .r-container {
+  min-height: 30vh;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
-.r-second-half .blob-wrapper .blob-inner-wrapper {
+.r-second-half .r-container .blob-wrapper {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.r-second-half .r-container .blob-wrapper .blob-inner-wrapper {
   position: relative;
 }
 
-.r-second-half .blob-wrapper .blob-inner-wrapper:before {
+.r-second-half .r-container .blob-wrapper .blob-inner-wrapper:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -300,22 +332,13 @@ div.green {
           transform-origin: bottom right;
 }
 
-.r-second-half .r-container {
-  min-height: 30vh;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+.r-second-half .r-container .intro-second-wrapper {
+  -webkit-box-flex: 1.618;
+      -ms-flex: 1.618;
+          flex: 1.618;
 }
 
-.r-second-half .r-container p {
-  max-width: 65%;
+.r-second-half .r-container .intro-second-wrapper p {
   margin-bottom: 1vw;
 }
 
@@ -642,7 +665,8 @@ div.green {
   font-size: min(max(23px, 5vw), 29px);
   color: white;
   font-weight: bold;
-  padding: 2vw 0 0 0;
+  padding: 0;
+  padding-top: 4vw;
   -webkit-transform: translateX(-10px);
           transform: translateX(-10px);
 }
@@ -750,6 +774,7 @@ div.green {
   -webkit-transform: translateY(-5vw) translateX(-10px);
           transform: translateY(-5vw) translateX(-10px);
   opacity: 0;
+  padding-top: 0;
 }
 
 .r-events .inner-events .event-card:hover .event-description {

@@ -56,6 +56,9 @@ div.r-container {
     line-height: 1.5;
     font-weight: 300;
   }
+  & a {
+    text-decoration: none;
+  }
 }
 h1,
 h2,
@@ -176,6 +179,7 @@ div {
     transform: translateX(-50%);
   }
 }
+
 //INTRO SECOND HALF
 .r-second-half {
   padding: 2vw;
@@ -185,34 +189,41 @@ div {
   background-position: center;
   background-position-x: 8vw;
   min-height: 30vh;
-  & .blob-wrapper {
-    position: absolute;
-    left: 18%;
-    top: 30%;
-    & .blob-inner-wrapper {
-      position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 90px;
-        height: 90px;
-        border-bottom: 70px solid rgba(134, 188, 37, 0.2);
-        border-right: 70px solid rgba(134, 188, 37, 0.2);
-        transform: rotate(-45deg) translate(0px, -228px);
-        transform-origin: bottom right;
-      }
-    }
-  }
+
   & .r-container {
     min-height: 30vh;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-end;
-    & p {
-      max-width: 65%;
-      margin-bottom: 1vw;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    & .blob-wrapper {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      & .blob-inner-wrapper {
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 90px;
+          height: 90px;
+          border-bottom: 70px solid rgba(134, 188, 37, 0.2);
+          border-right: 70px solid rgba(134, 188, 37, 0.2);
+          transform: rotate(-45deg) translate(0px, -228px);
+          transform-origin: bottom right;
+        }
+      }
+    }
+
+    & .intro-second-wrapper {
+      flex: 1.618;
+      & p {
+        margin-bottom: 1vw;
+      }
     }
     & .wide {
       align-self: stretch;
@@ -449,7 +460,8 @@ div {
         font-size: $eventTitle;
         color: white;
         font-weight: bold;
-        padding: 2vw 0 0 0;
+        padding: 0;
+        padding-top: 4vw;
         transform: translateX(-10px);
       }
 
@@ -530,6 +542,7 @@ div {
         & .event-title {
           transform: translateY(-5vw) translateX(-10px);
           opacity: 0;
+          padding-top: 0;
         }
         & .event-description {
           top: 2vw;

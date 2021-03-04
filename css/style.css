@@ -193,20 +193,20 @@ div.green {
 
 .r-header {
   background-image: url(../img/hero-bg.png);
-  min-height: 70vh;
-  background-position-x: 12vw;
+  height: 80vh;
+  background-position-x: 130px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .r-header .r-container {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  min-height: 70vh;
+  height: 100%;
 }
 
 .r-header .hero-text {
-  min-height: 70vh;
+  height: 100%;
   width: 30%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

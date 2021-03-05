@@ -34,4 +34,23 @@ $(document).ready(function () {
   if (eventLengthMod == 0) {
     $(".event-card:last-child").addClass("split");
   }
+
+  //ADD SPECIAL MOBILE CLASS
+  if ($(window).width() < 1024) {
+    $(".job-container:not(.special").addClass("mobLink");
+  }
+  //TABS EFFECTS
+  $(".mob-event-button").click(function () {
+    $(".mob-event-tab").removeClass("clicked");
+    $(".mob-event-button").removeClass("clicked");
+    $(this).addClass("clicked");
+    $(this).parent().find(".mob-event-tab").addClass("clicked");
+
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: $(this).offset().top - 150,
+      },
+      800
+    );
+  });
 });

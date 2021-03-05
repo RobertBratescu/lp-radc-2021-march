@@ -28,13 +28,16 @@
 body {
   background-color: black;
 }
-div.r-container {
+.r-container {
   max-width: 1200px;
   margin: 0 auto;
   height: 100%;
   padding: 0 2vw;
   position: inherit;
   //   background-color: rgba(134, 188, 37, 0.2);
+  @include tablet {
+    padding: 0vw 4vw;
+  }
 }
 .flex {
   display: flex;
@@ -103,6 +106,7 @@ div {
   animation: pulse-green 2s infinite;
 }
 
+//KEYFRAMES
 @keyframes pulse-green {
   0% {
     transform: scale(0.7);
@@ -119,6 +123,7 @@ div {
     box-shadow: 0 0 0 0 rgba(134, 188, 37, 0);
   }
 }
+@include arrow-keyframes;
 
 //HEADER
 .r-header {
@@ -127,6 +132,9 @@ div {
   background-position-x: 130px;
   background-repeat: no-repeat;
   background-size: cover;
+  @include tablet {
+    background-position-x: -230px;
+  }
   & .r-container {
     flex-basis: 100%;
     height: 100%;
@@ -156,6 +164,7 @@ div {
       text-transform: none;
       color: white;
       text-decoration: none;
+
       &:hover {
         background-color: $delGreen;
         // color: black;
@@ -175,8 +184,8 @@ div {
   & .blob {
     position: absolute;
     top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: calc(50% - 10px);
+    // transform: translateX(-50%);
   }
 }
 
@@ -189,12 +198,17 @@ div {
   background-position: center;
   background-position-x: 8vw;
   min-height: 30vh;
-
+  @include tablet {
+    background-size: cover;
+    background-position-x: 0;
+    padding: 5vw;
+  }
   & .r-container {
     min-height: 30vh;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: stretch;
+
     & .blob-wrapper {
       position: relative;
       flex: 1;
@@ -202,6 +216,9 @@ div {
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
+      @include tablet {
+        display: none;
+      }
       & .blob-inner-wrapper {
         position: relative;
         &:before {
@@ -244,6 +261,9 @@ div {
   & .jobs-section-title {
     font-size: $h2Font;
     color: white;
+    @include tablet {
+      text-align: center;
+    }
   }
   & .jobs-wrapper {
     min-height: 60vh;
@@ -251,6 +271,9 @@ div {
     justify-content: space-between;
     align-items: stretch;
     padding: 3vw 0;
+    @include tablet {
+      flex-flow: row wrap;
+    }
     & .job-container {
       flex-basis: 32%;
       background-color: rgba(36, 36, 36, 1);
@@ -262,6 +285,13 @@ div {
       cursor: pointer;
       border: 1px solid #242424;
       transition: all 0.6s ease;
+      @include tablet {
+        margin-top: 2vw;
+        flex-basis: 50%;
+        max-width: 49%;
+        align-items: center;
+        flex-flow: column nowrap;
+      }
 
       & .arrow {
         position: relative;
@@ -272,6 +302,9 @@ div {
         transform-origin: bottom right;
         transform: rotate(-45deg) translateY(-10px);
         transition: transform 0.4s ease;
+        @include tablet {
+          display: none;
+        }
         &:before {
           content: "";
           position: absolute;
@@ -293,6 +326,10 @@ div {
         margin: 2vw 0;
         color: white;
         text-transform: uppercase;
+        @include tablet {
+          width: 100%;
+          text-align: center;
+        }
       }
       &:not(.special) .cta-wrapper {
         width: 100%;
@@ -300,6 +337,10 @@ div {
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: stretch;
+        @include tablet {
+          justify-content: center;
+          margin-top: 4vw;
+        }
         & .cta-button {
           color: white;
           padding: 10px 20px;
@@ -307,6 +348,10 @@ div {
           font-weight: bold;
           background: rgba(134, 188, 37, 1);
           transition: all 0.3s ease;
+          @include tablet {
+            flex: 1;
+            text-align: center;
+          }
         }
         & .arrow {
           width: 25px;
@@ -329,6 +374,16 @@ div {
         //Hexagon
         clip-path: polygon(0 0, 50% 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
         transition: all 0.4s ease;
+        @include tablet {
+          margin: 0 auto;
+          flex-flow: row nowrap;
+          justify-items: center;
+          align-items: center;
+          width: auto;
+          padding: 1vw 5vw;
+          margin-top: 6vw;
+          align-self: center;
+        }
 
         & .job-container-title {
           font-size: $h3FontSpecial;
@@ -336,9 +391,16 @@ div {
           margin: 2vw 0;
           color: white;
           text-transform: uppercase;
+          @include tablet {
+            width: auto;
+          }
         }
         & .arrow {
           transform: scale(0.7) rotate(-45deg) translate(32px, -17px);
+          display: none;
+          @include tablet {
+            // display: block;
+          }
         }
       }
       &:not(.special):before {
@@ -390,6 +452,11 @@ div {
     position: absolute;
     top: -6.5vw;
     right: -7vw;
+    @include tablet {
+      z-index: -1;
+      top: -10vw;
+      right: -40vw;
+    }
   }
   & .inner-events {
     border-bottom: 3px solid $delGreen;
@@ -400,6 +467,9 @@ div {
     align-items: stretch;
     align-content: flex-start;
     padding: 2vw;
+    @include tablet {
+      display: none;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -583,10 +653,6 @@ div {
           }
         }
       }
-      & + .event-card {
-        // margin-left: 5%;
-      }
-
       &:hover {
         &:before {
           height: 100%;
@@ -641,6 +707,151 @@ div {
       }
     }
   }
+
+  & .mob-events {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+    flex-flow: column nowrap;
+    & .events-mob-wrapper {
+      width: 70%;
+      & .events-mob-title {
+        font-size: $h2Font;
+        color: white;
+      }
+      & .events-mob-subtitle {
+        font-size: $h3Font;
+        color: white;
+        font-weight: 300;
+      }
+    }
+
+    & .mob-event-card {
+      margin-top: 1vw;
+      flex-flow: column nowrap;
+      &.past {
+        & .mob-event-button {
+          background: $darkGrey;
+          font-style: italic;
+          & .mob-event-title {
+            color: #75787b !important;
+          }
+          & .mob-event-date {
+            color: #75787b !important;
+          }
+        }
+        & .mob-event-tab {
+          color: #75787b !important;
+          font-style: italic;
+          & .mob-event-description {
+            color: #75787b !important;
+          }
+          & .mob-event-cta-button {
+            display: none !important;
+          }
+        }
+      }
+      & .mob-event-button {
+        background: #aab93c;
+        width: 100%;
+        padding: 5vw;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          color: white;
+          width: 1.2vw;
+          height: 1.2vw;
+          border-bottom: 0.8vw solid white;
+          border-right: 0.8vw solid white;
+          top: 50%;
+          right: 5%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          transition: all 0.3s ease;
+        }
+        &.clicked {
+          &:after {
+            transform: translate(-50%, -50%) rotate(-135deg);
+          }
+        }
+        & .mob-event-date {
+          font-size: $pFontLarge;
+          color: white;
+          font-weight: 300;
+          &:before {
+            content: "\f073";
+            font-family: "Font Awesome 5 Free", "Dcom-EDE";
+            font-weight: 300;
+            margin-right: 7px;
+          }
+        }
+        & .mob-event-title {
+          margin-top: 0.7vw;
+          font-size: $h3Font;
+          color: white;
+          font-weight: bold;
+        }
+      }
+      & .mob-event-tab {
+        opacity: 1;
+        height: auto;
+        max-height: 0;
+        padding: 0 5vw;
+        background: #131313;
+        position: relative;
+        overflow: hidden;
+        // transition: all 0.4s ease;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          top: -20px;
+          left: 0;
+          height: 20px;
+          box-shadow: 0px 0px 20px #000000;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          bottom: -20px;
+          left: 0;
+          height: 20px;
+          box-shadow: 0px 0px 20px #000000;
+        }
+        &.clicked {
+          max-height: 100vh;
+          padding: 5vw;
+        }
+
+        & .mob-event-cta-wrapper {
+          margin-top: 6vw;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          & .mob-event-cta-button {
+            color: white;
+            cursor: pointer;
+
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            font-size: $pFontLarge;
+            font-weight: bold;
+            background-color: #cadb4e;
+            color: black;
+            opacity: 1;
+          }
+        }
+        & .mob-event-description {
+          color: white;
+          font-size: $pFontLarge;
+        }
+      }
+    }
+  }
 }
 
 //WHY JOIN US
@@ -653,13 +864,23 @@ div {
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+    @include tablet {
+      padding: 4vw 0;
+    }
     & .why-title {
       font-size: $h2Font;
       color: white;
+      @include tablet {
+        text-align: center;
+        flex: 1;
+      }
     }
     & .why-intro-image {
       margin-left: 2vw;
       transform: translateY(-7px);
+      @include tablet {
+        display: none;
+      }
     }
   }
 
@@ -667,6 +888,9 @@ div {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: flex-start;
+    @include tablet {
+      flex-flow: column nowrap;
+    }
 
     & .oyster-benefits {
       flex-flow: column nowrap;
@@ -686,6 +910,10 @@ div {
       align-items: stretch;
       flex-basis: 48%;
       // background-color: yellow;
+      @include tablet {
+        margin-top: 3vw;
+      }
+
       & .benefits-title {
         border-bottom: 1px solid $delBlue;
       }
@@ -695,6 +923,9 @@ div {
       justify-content: center;
       align-items: stretch;
       flex-basis: 100%;
+      @include tablet {
+        margin-top: 3vw;
+      }
 
       // background-color: blue;
       & .benefits-title {
@@ -706,6 +937,10 @@ div {
       font-weight: bold;
       padding: 20px 0;
       border-bottom: 1px solid red;
+      @include tablet {
+        padding-left: 1vw;
+        text-align: center;
+      }
     }
 
     & .benefit {
@@ -719,7 +954,6 @@ div {
       font-size: $pFontLarge;
       color: white;
       font-weight: 300;
-
       & .benefit-img {
         max-width: 50px;
         margin-right: 1.5vw;
@@ -735,16 +969,25 @@ div {
   min-height: 30vh;
   padding: 4vw 0;
   & .r-container {
+    min-height: 30vh;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
     padding-left: 3vw;
+    @include tablet {
+      align-self: center;
+    }
     & .cta-title {
       font-size: $h2Font;
       color: white;
       max-width: 30vw;
       // line-height: 1;
       margin-bottom: 2vw;
+      @include tablet {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+      }
     }
     & .cta-link {
       cursor: pointer;
@@ -756,6 +999,10 @@ div {
       border: 3px solid white;
       font-size: #{"min(max(#{20px}, #{2vw}), #{24px})"};
       transition: all 0.3s ease;
+      @include tablet {
+        align-self: center;
+        margin-top: 4vw;
+      }
       &:hover {
         background-color: white;
         color: $delGreen;
@@ -783,6 +1030,9 @@ div {
     }
     & .r-social-icon {
       flex-basis: 3%;
+      @include tablet {
+        flex-basis: 5%;
+      }
       &:hover {
         transform: scale(1.1);
       }
@@ -794,9 +1044,10 @@ div {
       }
       & + .r-social-icon {
         margin-left: 10px;
+        @include tablet {
+          margin-left: 20px;
+        }
       }
     }
   }
 }
-
-@include arrow-keyframes;

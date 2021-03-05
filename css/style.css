@@ -634,6 +634,23 @@ div.green {
   overflow: hidden;
 }
 
+.r-events .inner-events .event-card.past:before {
+  background: #1c1c1c;
+}
+
+.r-events .inner-events .event-card.past .event-cta-wrapper {
+  display: none;
+}
+
+.r-events .inner-events .event-card.past .event-card-img {
+  opacity: 0.6;
+}
+
+.r-events .inner-events .event-card.past * {
+  color: #75787b !important;
+  font-style: italic !important;
+}
+
 .r-events .inner-events .event-card:before {
   content: "";
   position: absolute;
@@ -666,9 +683,29 @@ div.green {
   color: white;
   font-weight: bold;
   padding: 0;
-  padding-top: 4vw;
+  padding-top: 15px;
   -webkit-transform: translateX(-10px);
           transform: translateX(-10px);
+}
+
+.r-events .inner-events .event-card .event-date {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: min(max(18px, 2vw), 20px);
+  color: white;
+  font-weight: 400;
+  padding: 0;
+  padding-top: 35px;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+  position: relative;
+}
+
+.r-events .inner-events .event-card .event-date:before {
+  content: "\f073";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 300;
+  margin-right: 7px;
 }
 
 .r-events .inner-events .event-card .event-description {
@@ -777,6 +814,13 @@ div.green {
   padding-top: 0;
 }
 
+.r-events .inner-events .event-card:hover .event-date {
+  -webkit-transform: translateY(-5vw) translateX(-10px);
+          transform: translateY(-5vw) translateX(-10px);
+  opacity: 0;
+  padding-top: 0;
+}
+
 .r-events .inner-events .event-card:hover .event-description {
   top: 2vw;
   opacity: 1;
@@ -791,6 +835,26 @@ div.green {
 .r-events .inner-events .event-card:hover .arrow {
   -webkit-transform: rotate(-45deg) translate(35px, 20px);
           transform: rotate(-45deg) translate(35px, 20px);
+}
+
+.r-events .inner-events .event-card.no-sub .event-cta-button {
+  background: none;
+  color: white;
+  padding-left: 0;
+}
+
+.r-events .inner-events .event-card.no-sub .arrow {
+  display: none;
+}
+
+.r-events .inner-events .event-card.no-sub:hover .event-cta-button.hovered {
+  background: none;
+  cursor: initial;
+}
+
+.r-events .inner-events .event-card.split {
+  margin-right: auto;
+  margin-left: 2%;
 }
 
 .r-why {

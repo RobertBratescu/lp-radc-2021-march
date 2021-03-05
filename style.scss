@@ -435,6 +435,34 @@ div {
       z-index: 1;
       transition: all 0.4s ease;
       overflow: hidden;
+      // &.blue-card {
+      //   &:before {
+      //     background: $delBlue;
+      //   }
+      //   & .event-cta-wrapper {
+      //     background: $delBlue;
+      //   }
+      //   & .event-cta-button {
+      //     background: $delBlue;
+      //   }
+      // }
+
+      &.past {
+        // height: 380px;
+        &:before {
+          background: $darkGrey;
+        }
+        & .event-cta-wrapper {
+          display: none;
+        }
+        & .event-card-img {
+          opacity: 0.6;
+        }
+        & * {
+          color: #75787b !important;
+          font-style: italic !important;
+        }
+      }
       &:before {
         content: "";
         position: absolute;
@@ -461,8 +489,24 @@ div {
         color: white;
         font-weight: bold;
         padding: 0;
-        padding-top: 4vw;
+        padding-top: 15px;
         transform: translateX(-10px);
+      }
+      & .event-date {
+        transition: all 0.3s ease;
+        font-size: $pFontLarge;
+        color: white;
+        font-weight: 400;
+        padding: 0;
+        padding-top: 35px;
+        transform: translateX(-10px);
+        position: relative;
+        &:before {
+          content: "\f073";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 300;
+          margin-right: 7px;
+        }
       }
 
       & .event-description {
@@ -531,6 +575,7 @@ div {
       & + .event-card {
         // margin-left: 5%;
       }
+
       &:hover {
         &:before {
           height: 100%;
@@ -540,6 +585,11 @@ div {
           opacity: 0;
         }
         & .event-title {
+          transform: translateY(-5vw) translateX(-10px);
+          opacity: 0;
+          padding-top: 0;
+        }
+        & .event-date {
           transform: translateY(-5vw) translateX(-10px);
           opacity: 0;
           padding-top: 0;
@@ -556,6 +606,27 @@ div {
           transform: rotate(-45deg) translate(35px, 20px);
           // animation: arrow-small-move-2 1.5s linear ease-in-out;
         }
+      }
+
+      &.no-sub {
+        // display: none;
+        & .event-cta-button {
+          background: none;
+          color: white;
+          padding-left: 0;
+        }
+        & .arrow {
+          display: none;
+        }
+        &:hover .event-cta-button.hovered {
+          background: none;
+          cursor: initial;
+        }
+      }
+
+      &.split {
+        margin-right: auto;
+        margin-left: 2%;
       }
     }
   }

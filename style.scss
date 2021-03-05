@@ -324,6 +324,12 @@ div {
       &.special {
         background-color: #114129;
         justify-content: center;
+        //Pentagon
+        clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+        //Hexagon
+        clip-path: polygon(0 0, 50% 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
+        transition: all 0.4s ease;
+
         & .job-container-title {
           font-size: $h3FontSpecial;
           width: 50%;
@@ -362,6 +368,11 @@ div {
       }
       &.special:hover {
         background-color: #145032;
+        //Pentagon
+        clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+        //Hexagon
+        clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+
         & .arrow {
           animation: arrow-big-move 1.5s infinite 0s ease-in-out;
         }
@@ -503,7 +514,7 @@ div {
         position: relative;
         &:before {
           content: "\f073";
-          font-family: "Font Awesome 5 Free";
+          font-family: "Font Awesome 5 Free", "Dcom-EDE";
           font-weight: 300;
           margin-right: 7px;
         }

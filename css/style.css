@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic);
 /* --- PAGE SCROLLBAR --- */
 /* width */
 ::-webkit-scrollbar {
@@ -489,6 +490,12 @@ div.green {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+          clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(0 0, 50% 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
+          clip-path: polygon(0 0, 50% 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .r-jobs .jobs-wrapper .job-container.special .job-container-title {
@@ -535,6 +542,10 @@ div.green {
 
 .r-jobs .jobs-wrapper .job-container.special:hover {
   background-color: #145032;
+  -webkit-clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+          clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+  -webkit-clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+          clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
 
 .r-jobs .jobs-wrapper .job-container.special:hover .arrow {
@@ -703,7 +714,7 @@ div.green {
 
 .r-events .inner-events .event-card .event-date:before {
   content: "\f073";
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free", "Dcom-EDE";
   font-weight: 300;
   margin-right: 7px;
 }

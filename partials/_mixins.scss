@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic);
 
 @import "include-media";
@@ -10,7 +10,7 @@ $delBlue: #00a3e0;
 $darkGrey: #1c1c1c;
 
 //FONTS
-$h1Font: #{"min(max(#{30px}, #{7vw}), #{54px})"};
+$h1Font: #{"min(max(#{30px}, #{7vw}), #{63px})"};
 $h2Font: #{"min(max(#{27px}, #{6vw}), #{48px})"};
 $h3Font: #{"min(max(#{20px}, #{4vw}), #{25px})"};
 $h3FontSpecial: #{"min(max(#{23px}, #{5vw}), #{32px})"};

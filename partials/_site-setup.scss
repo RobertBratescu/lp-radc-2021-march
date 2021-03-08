@@ -1,0 +1,33 @@
+#cmp-related-tags,
+div.cmp-footer__top-bar {
+  display: none !important;
+}
+.htmlfragment {
+  padding: 0;
+}
+.responsivegrid {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+footer#footer.cmp-footer {
+  background-color: black;
+}
+div.cmp-footer__copy-rights.cmp-container-width.aem-Grid.aem-Grid--12 p {
+  color: white;
+  text-align: center;
+  width: auto;
+}
+div.aem-GridColumn.aem-GridColumn--default--10.aem-GridColumn--phone--12 {
+  width: 100% !important;
+}
+.cmp-footer__links ul li a {
+  color: white !important;
+}
+div.cmp-footer__links {
+  color: white;
+  background-color: black;
+  border-top: 2px dotted #86bc25;
+}
+#footer__social {
+  display: none;
+}

@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic);
 /* --- PAGE SCROLLBAR --- */
 /* width */
@@ -57,6 +56,8 @@ body {
   font-family: "Open Sans", sans;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .radc-wrapper > section {
@@ -289,7 +290,7 @@ div.green {
 }
 
 .r-header {
-  background-image: url(../img/hero-bg.png);
+  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/hero-bg.png);
   height: 80vh;
   background-position-x: 130px;
   background-repeat: no-repeat;
@@ -325,8 +326,14 @@ div.green {
   margin-left: 1vw;
 }
 
+@media (max-width: 766px) {
+  .r-header .hero-text {
+    width: 60%;
+  }
+}
+
 .r-header .hero-text .hero-title {
-  font-size: min(max(30px, 7vw), 54px);
+  font-size: min(max(30px, 7vw), 63px);
   font-weight: 300;
   -webkit-box-flex: 0;
       -ms-flex: 0;
@@ -372,7 +379,7 @@ div.green {
 
 .r-second-half {
   padding: 2vw;
-  background-image: url(../img/intro-bg.png);
+  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/intro-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -544,6 +551,14 @@ div.green {
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
+  }
+}
+
+@media (max-width: 766px) {
+  .r-jobs .jobs-wrapper .job-container {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
@@ -765,6 +780,7 @@ div.green {
   position: absolute;
   top: -6.5vw;
   right: -7vw;
+  opacity: 60%;
 }
 
 @media (max-width: 1023px) {
@@ -1065,6 +1081,14 @@ div.green {
           transform: rotate(-45deg) translate(35px, 20px);
 }
 
+.r-events .inner-events .event-card.no-sub:before {
+  background-color: #53565a;
+}
+
+.r-events .inner-events .event-card.no-sub .event-cta-wrapper {
+  background-color: #53565a;
+}
+
 .r-events .inner-events .event-card.no-sub .event-cta-button {
   background: none;
   color: white;
@@ -1101,6 +1125,7 @@ div.green {
 
 .r-events .mob-events .events-mob-wrapper {
   width: 70%;
+  margin-bottom: 60px;
 }
 
 .r-events .mob-events .events-mob-wrapper .events-mob-title {
@@ -1441,6 +1466,7 @@ div.green {
   font-size: min(max(18px, 2vw), 20px);
   color: white;
   font-weight: 300;
+  cursor: default;
 }
 
 .r-why .benefits-wrapper .benefit .benefit-img {
@@ -1448,6 +1474,12 @@ div.green {
   margin-right: 1.5vw;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  fill: white;
+}
+
+.r-why .benefits-wrapper .benefit .benefit-img path {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .r-cta {
@@ -1584,5 +1616,47 @@ div.green {
   .r-follow .r-container .r-social-icon + .r-social-icon {
     margin-left: 20px;
   }
+}
+
+#cmp-related-tags,
+div.cmp-footer__top-bar {
+  display: none !important;
+}
+
+.htmlfragment {
+  padding: 0;
+}
+
+.responsivegrid {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+footer#footer.cmp-footer {
+  background-color: black;
+}
+
+div.cmp-footer__copy-rights.cmp-container-width.aem-Grid.aem-Grid--12 p {
+  color: white;
+  text-align: center;
+  width: auto;
+}
+
+div.aem-GridColumn.aem-GridColumn--default--10.aem-GridColumn--phone--12 {
+  width: 100% !important;
+}
+
+.cmp-footer__links ul li a {
+  color: white !important;
+}
+
+div.cmp-footer__links {
+  color: white;
+  background-color: black;
+  border-top: 2px dotted #86bc25;
+}
+
+#footer__social {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

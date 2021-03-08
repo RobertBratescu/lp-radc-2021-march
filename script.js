@@ -53,4 +53,26 @@ $(document).ready(function () {
       800
     );
   });
+
+  //CHANGE BENEFIT ICONS COLORS
+  $(".oyster-benefits .benefit").mouseover(function () {
+    $(this).find("path").css("fill", "#86bc25");
+  });
+  $(".oyster-benefits .benefit").mouseout(function () {
+    $(this).find("path").css("fill", "white");
+  });
+
+  $(".needs-benefits .benefit").mouseover(function () {
+    $(this).find("path").css("fill", "#00a3e0");
+  });
+  $(".needs-benefits .benefit").mouseout(function () {
+    $(this).find("path").css("fill", "white");
+  });
+
+  $(".flexibility-benefits .benefit").mouseover(function () {
+    $(this).find("path").css("fill", "#62a381");
+  });
+  $(".flexibility-benefits .benefit").mouseout(function () {
+    $(this).find("path").css("fill", "white");
+  });
 });

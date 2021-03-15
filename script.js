@@ -74,23 +74,23 @@ $(document).ready(function () {
 
   //CHANGE BENEFIT ICONS COLORS
   $(".oyster-benefits .benefit").mouseover(function () {
-    $(this).find("path").css("fill", "#86bc25");
+    $(this).find("path, circle").css("fill", "#86bc25");
   });
   $(".oyster-benefits .benefit").mouseout(function () {
-    $(this).find("path").css("fill", "white");
+    $(this).find("path, circle").css("fill", "white");
   });
 
   $(".needs-benefits .benefit").mouseover(function () {
-    $(this).find("path").css("fill", "#00a3e0");
+    $(this).find("path, circle").css("fill", "#00a3e0");
   });
   $(".needs-benefits .benefit").mouseout(function () {
-    $(this).find("path").css("fill", "white");
+    $(this).find("path, circle").css("fill", "white");
   });
 
   $(".flexibility-benefits .benefit").mouseover(function () {
-    $(this).find("path").css("fill", "#62a381");
+    $(this).find("path, circle").css("fill", "#62a381");
   });
   $(".flexibility-benefits .benefit").mouseout(function () {
-    $(this).find("path").css("fill", "white");
+    $(this).find("path, circle").css("fill", "white");
   });
 });

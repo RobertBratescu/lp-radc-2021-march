@@ -1517,6 +1517,11 @@ div.green {
   transition: all 0.3s ease;
 }
 
+.r-why .benefits-wrapper .benefit .benefit-img circle {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .r-why .benefits-wrapper .benefit span {
   max-width: 80%;
 }

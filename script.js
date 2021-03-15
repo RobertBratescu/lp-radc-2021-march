@@ -1,4 +1,21 @@
 $(document).ready(function () {
+  //CHECK IF IE
+  /* Sample function that returns boolean in case the browser is Internet Explorer*/
+  function isIE() {
+    ua = navigator.userAgent;
+    /* MSIE used to detect old browsers and Trident used to newer ones*/
+    var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+
+    return is_ie;
+  }
+  /* Create an alert to show if the browser is IE or not */
+  if (isIE()) {
+    $(".radc-wrapper").html("<div class='ie-version'>Internet Explorer is not supported for this page.<br> Please consider using Google Chrome, Safari, Firefox or Edge.</div>");
+  }
+  // } else {
+  //   console.log("is NOT IE");
+  // }
+
   //SCROLL THE "WHY JOIN US" BUTTON
   $(".job-container.special").click(function () {
     $([document.documentElement, document.body]).animate(
@@ -37,6 +54,7 @@ $(document).ready(function () {
 
   //ADD SPECIAL MOBILE CLASS
   if ($(window).width() < 1024) {
+    $(".job-container:not(.special").removeClass("deskLink");
     $(".job-container:not(.special").addClass("mobLink");
   }
   //TABS EFFECTS

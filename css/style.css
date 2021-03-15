@@ -50,6 +50,8 @@ body {
   overflow-x: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-top: 70px;
+  position: relative;
 }
 
 .radc-wrapper * {
@@ -74,6 +76,14 @@ body {
 
 .radc-wrapper a {
   text-decoration: none;
+}
+
+.radc-wrapper .ie-version {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10vh 0;
 }
 
 h1.green,
@@ -290,17 +300,11 @@ div.green {
 }
 
 .r-header {
-  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/hero-bg.png);
+  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/hero-bg.png?nc=1?nc=1);
   height: 80vh;
-  background-position-x: 130px;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-@media (max-width: 1023px) {
-  .r-header {
-    background-position-x: -230px;
-  }
+  background-position: center;
 }
 
 .r-header .r-container {
@@ -342,6 +346,12 @@ div.green {
   margin-bottom: 3vw;
 }
 
+@media (max-width: 1023px) {
+  .r-header .hero-text .hero-title {
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
 .r-header .hero-text .hero-cta {
   cursor: pointer;
   -webkit-box-flex: 0;
@@ -379,7 +389,7 @@ div.green {
 
 .r-second-half {
   padding: 2vw;
-  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/intro-bg.png);
+  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/intro-bg.png?nc=1);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -517,8 +527,8 @@ div.green {
 }
 
 .r-jobs .jobs-wrapper .job-container {
-  -ms-flex-preferred-size: 32%;
-      flex-basis: 32%;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
   background-color: #242424;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -541,9 +551,6 @@ div.green {
 @media (max-width: 1023px) {
   .r-jobs .jobs-wrapper .job-container {
     margin-top: 2vw;
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
-    max-width: 49%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -551,11 +558,6 @@ div.green {
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-  }
-}
-
-@media (max-width: 766px) {
-  .r-jobs .jobs-wrapper .job-container {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     max-width: 100%;
@@ -677,6 +679,8 @@ div.green {
 }
 
 .r-jobs .jobs-wrapper .job-container.special {
+  -ms-flex-preferred-size: 38%;
+      flex-basis: 38%;
   background-color: #114129;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -714,7 +718,6 @@ div.green {
   width: 50%;
   margin: 2vw 0;
   color: white;
-  text-transform: uppercase;
 }
 
 @media (max-width: 1023px) {
@@ -1081,25 +1084,22 @@ div.green {
           transform: rotate(-45deg) translate(35px, 20px);
 }
 
-.r-events .inner-events .event-card.no-sub:before {
-  background-color: #53565a;
-}
-
 .r-events .inner-events .event-card.no-sub .event-cta-wrapper {
-  background-color: #53565a;
+  display: block;
+  background-color: #1c1c1c;
 }
 
-.r-events .inner-events .event-card.no-sub .event-cta-button {
+.r-events .inner-events .event-card.no-sub .event-cta-wrapper .arrow {
+  display: none;
+}
+
+.r-events .inner-events .event-card.no-sub .event-cta-wrapper .event-cta-button {
   background: none;
   color: white;
   padding-left: 0;
 }
 
-.r-events .inner-events .event-card.no-sub .arrow {
-  display: none;
-}
-
-.r-events .inner-events .event-card.no-sub:hover .event-cta-button.hovered {
+.r-events .inner-events .event-card.no-sub .event-cta-wrapper .event-cta-button.hovered {
   background: none;
   cursor: initial;
 }
@@ -1140,7 +1140,7 @@ div.green {
 }
 
 .r-events .mob-events .mob-event-card {
-  margin-top: 1vw;
+  margin-top: calc(1vw + 100px);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -1152,11 +1152,11 @@ div.green {
   font-style: italic;
 }
 
-.r-events .mob-events .mob-event-card.past .mob-event-button .mob-event-title {
+.r-events .mob-events .mob-event-card.past .mob-event-button .mob-event-date {
   color: #75787b !important;
 }
 
-.r-events .mob-events .mob-event-card.past .mob-event-button .mob-event-date {
+.r-events .mob-events .mob-event-card.past .mob-event-button .mob-event-title {
   color: #75787b !important;
 }
 
@@ -1178,6 +1178,19 @@ div.green {
   width: 100%;
   padding: 5vw;
   position: relative;
+}
+
+.r-events .mob-events .mob-event-card .mob-event-button .event-card-img {
+  display: block;
+  position: absolute;
+  top: -65px;
+  left: 5vw;
+}
+
+@media (max-width: 766px) {
+  .r-events .mob-events .mob-event-card .mob-event-button .event-card-img {
+    top: -80px;
+  }
 }
 
 .r-events .mob-events .mob-event-card .mob-event-button:after {
@@ -1205,6 +1218,7 @@ div.green {
   font-size: min(max(18px, 2vw), 20px);
   color: white;
   font-weight: 300;
+  margin-left: 185px;
 }
 
 .r-events .mob-events .mob-event-card .mob-event-button .mob-event-date:before {
@@ -1215,10 +1229,12 @@ div.green {
 }
 
 .r-events .mob-events .mob-event-card .mob-event-button .mob-event-title {
-  margin-top: 0.7vw;
+  margin-top: 1.5vw;
   font-size: min(max(20px, 4vw), 25px);
   color: white;
   font-weight: bold;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .r-events .mob-events .mob-event-card .mob-event-tab {

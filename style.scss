@@ -45,6 +45,8 @@ body {
 .radc-wrapper {
   overflow-x: hidden;
   box-sizing: border-box;
+  margin-top: 70px;
+  position: relative;
   & * {
     font-family: "Open Sans", sans;
     box-sizing: border-box;
@@ -62,6 +64,13 @@ body {
   }
   & a {
     text-decoration: none;
+  }
+  .ie-version {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10vh 0;
   }
 }
 h1,
@@ -128,13 +137,15 @@ div {
 
 //HEADER
 .r-header {
-  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/hero-bg.png);
+  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/hero-bg.png?nc=1?nc=1);
   height: 80vh;
-  background-position-x: 130px;
+  // background-position-x: 130px;
+  // background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   @include tablet {
-    background-position-x: -230px;
+    // background-position-x: -230px;
   }
   .r-container {
     flex-basis: 100%;
@@ -157,6 +168,9 @@ div {
       flex: 0;
       margin: 0;
       margin-bottom: 3vw;
+      @include tablet {
+        text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
+      }
     }
     .hero-cta {
       cursor: pointer;
@@ -196,7 +210,7 @@ div {
 //INTRO SECOND HALF
 .r-second-half {
   padding: 2vw;
-  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/intro-bg.png);
+  background-image: url(https://www2.deloitte.com/content/dam/html/ro/radc-jobs-2021/img/intro-bg.png?nc=1);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -279,7 +293,7 @@ div {
       flex-flow: row wrap;
     }
     .job-container {
-      flex-basis: 32%;
+      flex-basis: 60%;
       background-color: rgba(36, 36, 36, 1);
       flex-flow: column nowrap;
       justify-content: space-between;
@@ -291,12 +305,8 @@ div {
       transition: all 0.6s ease;
       @include tablet {
         margin-top: 2vw;
-        flex-basis: 50%;
-        max-width: 49%;
         align-items: center;
         flex-flow: column nowrap;
-      }
-      @include phone {
         flex-basis: 100%;
         max-width: 100%;
       }
@@ -375,6 +385,7 @@ div {
         }
       }
       &.special {
+        flex-basis: 38%;
         background-color: #114129;
         justify-content: center;
         //Pentagon
@@ -398,7 +409,7 @@ div {
           width: 50%;
           margin: 2vw 0;
           color: white;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           @include tablet {
             width: auto;
           }
@@ -697,24 +708,27 @@ div {
       &.no-sub {
         // display: none;
         // &:before,
-        &:before {
-          background-color: #53565a;
-        }
+        // &:before {
+        //   background-color: #53565a;
+        // }
         .event-cta-wrapper {
-          background-color: #53565a;
+          display: block;
+          background-color: $darkGrey;
+          .arrow {
+            display: none;
+          }
+          .event-cta-button {
+            background: none;
+            color: white;
+            padding-left: 0;
+            &.hovered {
+              background: none;
+              cursor: initial;
+            }
+          }
         }
-        .event-cta-button {
-          background: none;
-          color: white;
-          padding-left: 0;
-        }
-        .arrow {
-          display: none;
-        }
-        &:hover .event-cta-button.hovered {
-          background: none;
-          cursor: initial;
-        }
+        // &:hover .event-cta-button.hovered {
+        // }
       }
 
       &.split {
@@ -745,16 +759,16 @@ div {
     }
 
     .mob-event-card {
-      margin-top: 1vw;
+      margin-top: calc(1vw + 100px);
       flex-flow: column nowrap;
       &.past {
         .mob-event-button {
           background: $darkGrey;
           font-style: italic;
-          & .mob-event-title {
+          .mob-event-date {
             color: #75787b !important;
           }
-          & .mob-event-date {
+          .mob-event-title {
             color: #75787b !important;
           }
         }
@@ -774,6 +788,21 @@ div {
         width: 100%;
         padding: 5vw;
         position: relative;
+        // display: flex;
+        // flex-flow: row wrap;
+        // justify-content: flex-start;
+        // align-content: flex-start;
+        // align-items: baseline;
+        .event-card-img {
+          display: block;
+          position: absolute;
+          top: -65px;
+          left: 5vw;
+          @include phone {
+            top: -80px;
+          }
+        }
+
         &:after {
           content: "";
           position: absolute;
@@ -792,10 +821,11 @@ div {
             transform: translate(-50%, -50%) rotate(-135deg);
           }
         }
-        & .mob-event-date {
+        .mob-event-date {
           font-size: $pFontLarge;
           color: white;
           font-weight: 300;
+          margin-left: 185px;
           &:before {
             content: "\f073";
             font-family: "Font Awesome 5 Free", "Dcom-EDE";
@@ -803,11 +833,12 @@ div {
             margin-right: 7px;
           }
         }
-        & .mob-event-title {
-          margin-top: 0.7vw;
+        .mob-event-title {
+          margin-top: 1.5vw;
           font-size: $h3Font;
           color: white;
           font-weight: bold;
+          flex-basis: 100%;
         }
       }
       .mob-event-tab {

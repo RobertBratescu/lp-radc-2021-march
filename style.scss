@@ -276,6 +276,9 @@ div {
   background-color: $darkGrey;
   min-height: 60vh;
   padding: 3vw 0;
+  @include phone {
+    padding: 7vw 0;
+  }
   .jobs-section-title {
     font-size: $h2Font;
     color: white;
@@ -292,6 +295,7 @@ div {
     @include tablet {
       flex-flow: row wrap;
     }
+
     .job-container {
       flex-basis: 60%;
       background-color: rgba(36, 36, 36, 1);
@@ -394,12 +398,13 @@ div {
         clip-path: polygon(0 0, 50% 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
         transition: all 0.4s ease;
         @include tablet {
+          white-space: nowrap;
           margin: 0 auto;
           flex-flow: row nowrap;
           justify-items: center;
           align-items: center;
           width: auto;
-          padding: 1vw 5vw;
+          padding: 1vw 8vw;
           margin-top: 6vw;
           align-self: center;
         }
@@ -747,8 +752,13 @@ div {
     .events-mob-wrapper {
       width: 70%;
       margin-bottom: 60px;
+      @include phone {
+        width: 100%;
+        text-align: center;
+      }
       .events-mob-title {
         font-size: $h2Font;
+        padding: 12vw 0;
         color: white;
       }
       .events-mob-subtitle {
@@ -759,7 +769,7 @@ div {
     }
 
     .mob-event-card {
-      margin-top: calc(1vw + 100px);
+      margin-top: calc(5vw + 100px);
       flex-flow: column nowrap;
       &.past {
         .mob-event-button {
@@ -834,7 +844,7 @@ div {
           }
         }
         .mob-event-title {
-          margin-top: 1.5vw;
+          margin-top: 5vw;
           font-size: $h3Font;
           color: white;
           font-weight: bold;
@@ -979,6 +989,9 @@ div {
       .benefits-title {
         border-bottom: 1px solid $darkGreen;
       }
+      .benefit:last-child {
+        border-bottom: none;
+      }
     }
     .benefits-title {
       font-size: $h3FontSpecial;
@@ -999,7 +1012,7 @@ div {
       margin-left: 3vw;
       border-bottom: 1px solid #515151;
 
-      font-size: $pFontLarge;
+      font-size: $pFont;
       color: white;
       font-weight: 300;
       cursor: default;
@@ -1011,6 +1024,9 @@ div {
         path {
           transition: all 0.3s ease;
         }
+      }
+      & span {
+        max-width: 80%;
       }
     }
   }

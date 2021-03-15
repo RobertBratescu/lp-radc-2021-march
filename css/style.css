@@ -491,6 +491,12 @@ div.green {
   padding: 3vw 0;
 }
 
+@media (max-width: 766px) {
+  .r-jobs {
+    padding: 7vw 0;
+  }
+}
+
 .r-jobs .jobs-section-title {
   font-size: min(max(27px, 6vw), 48px);
   color: white;
@@ -695,6 +701,7 @@ div.green {
 
 @media (max-width: 1023px) {
   .r-jobs .jobs-wrapper .job-container.special {
+    white-space: nowrap;
     margin: 0 auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -705,7 +712,7 @@ div.green {
         -ms-flex-align: center;
             align-items: center;
     width: auto;
-    padding: 1vw 5vw;
+    padding: 1vw 8vw;
     margin-top: 6vw;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
@@ -1128,8 +1135,16 @@ div.green {
   margin-bottom: 60px;
 }
 
+@media (max-width: 766px) {
+  .r-events .mob-events .events-mob-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .r-events .mob-events .events-mob-wrapper .events-mob-title {
   font-size: min(max(27px, 6vw), 48px);
+  padding: 12vw 0;
   color: white;
 }
 
@@ -1140,7 +1155,7 @@ div.green {
 }
 
 .r-events .mob-events .mob-event-card {
-  margin-top: calc(1vw + 100px);
+  margin-top: calc(5vw + 100px);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -1229,7 +1244,7 @@ div.green {
 }
 
 .r-events .mob-events .mob-event-card .mob-event-button .mob-event-title {
-  margin-top: 1.5vw;
+  margin-top: 5vw;
   font-size: min(max(20px, 4vw), 25px);
   color: white;
   font-weight: bold;
@@ -1451,6 +1466,10 @@ div.green {
   border-bottom: 1px solid #62a381;
 }
 
+.r-why .benefits-wrapper .flexibility-benefits .benefit:last-child {
+  border-bottom: none;
+}
+
 .r-why .benefits-wrapper .benefits-title {
   font-size: min(max(23px, 5vw), 32px);
   font-weight: bold;
@@ -1479,7 +1498,7 @@ div.green {
   padding: 20px 0;
   margin-left: 3vw;
   border-bottom: 1px solid #515151;
-  font-size: min(max(18px, 2vw), 20px);
+  font-size: min(max(16px, 1vw), 18px);
   color: white;
   font-weight: 300;
   cursor: default;
@@ -1496,6 +1515,10 @@ div.green {
 .r-why .benefits-wrapper .benefit .benefit-img path {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.r-why .benefits-wrapper .benefit span {
+  max-width: 80%;
 }
 
 .r-cta {
